@@ -95,7 +95,6 @@ This program is presented in parts and is the first program presented by the aut
 In the book this program is found in Example 10-1 on page 144.
 
 The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is:
-
 LDA 9h \
 ADD Ah \
 ADD Bh \
@@ -117,22 +116,70 @@ The execution of this program is:
 
 | Address | Instruction | Hexa |Assembly |    Action    |      Rezult      |
 |---------|-------------|------|---------|--------------|------------------|
-|  0000	  |  0000 0010  |  09  |  LDA 9h | A <- [9]	    | A = 1            |
-|  0001   |	 0001 0001  |  1A  |  ADD Ah | A <- A + [A]	| A = 1 + 2 = 3    |
-|  0002   |	 0010 0000  |  1B  |  ADD Bh | A <- A + [B]	| A = 3 + 3 = 6    |
-|  0003   |	 0011 0000  |  2C  |  SUB Ch | A <- A - [C]	| A = 6 - 4 = 2    |
-|  0004   |	 0100 0100  |  E0  |  OUT	 | OUT <- A		| OUT = 2	       |
-|  0005   |	 0101 0000  |  F0  |  HLT	 |	    -		|       -	       |
-|  0006   |	 0110 0000  |  FF  |  HLT	 |	    -		|       -	       |
-|  0007   |	 0111 0000  |  FF  |  HLT	 |	    -		|       -	       |
-|  0008   |	 1000 0000  |  FF  |  HLT	 |	    -		|       -	       |
-|  0009   |	 1001 0000  |  01  |  X  	 |	    -		|       -	       |
-|  000A   |	 1010 0000  |  02  |  Y 	 |	    -		|       -	       |
-|  000B   |	 1011 0000  |  03  |  Z 	 |	    -		|       -	       |
-|  000C   |	 1100 0000  |  04  |  W 	 |	    -		|       -	       |
-|  000D   |	 1101 0000  |  FF  |  HLT	 |	    -		|       -	       |
-|  000E   |	 1110 0000  |  FF  |  HLT	 |	    -		|       -	       |
-|  000F   |	 1111 0000  |  FF  |  HLT	 |	    -		|       -	       |
+|  0000	  |  0000 1001  |  09  |  LDA 9h | A <- [9]	    | A = 1            |
+|  0001   |	 0001 1010  |  1A  |  ADD Ah | A <- A + [A]	| A = 1 + 2 = 3    |
+|  0002   |	 0001 1011  |  1B  |  ADD Bh | A <- A + [B]	| A = 3 + 3 = 6    |
+|  0003   |	 0011 1100  |  2C  |  SUB Ch | A <- A - [C]	| A = 6 - 4 = 2    |
+|  0004   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 2	       |
+|  0005   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0007   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0008   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0009   |	 0000 0001  |  01  |  X  	 |	    -		|       -	       |
+|  000A   |	 0000 0010  |  02  |  Y 	 |	    -		|       -	       |
+|  000B   |	 0000 0011  |  03  |  Z 	 |	    -		|       -	       |
+|  000C   |	 0000 0100  |  04  |  W 	 |	    -		|       -	       |
+|  000D   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  000E   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  000F   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
 
 The ROM image used in the simulation in the Logisim program is:
 [ ROM2 ](/ROMS/ROM2) 
+
+### Program 3
+This program is presented in parts and is the second program presented by the authors explaining the operation of the SAP-1 computer.
+
+In the Book this program is found in Example 10-3 on page 145.
+
+This program solves the arithmetic problem: 16 + 20 + 24 - 32. This equation can be written: X + Y + Z – W.
+
+The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
+LDA 9h \
+ADD Ah \
+ADD Bh \
+SUB Ch \
+OUT \
+HLT \
+FFh \
+FFh \
+FFh \
+10h \
+14h \
+18h \
+20h \
+FFh \
+FFh \
+FFh
+
+The execution of this program is:
+
+| Address | Instruction | Hexa |Assembly |    Action    |      Rezult      |
+|---------|-------------|------|---------|--------------|------------------|
+|  0000	  |  0000 1001  |  09  |  LDA 9h | A <- [9]	    | A = 16           |
+|  0001   |	 0001 1010  |  1A  |  ADD Ah | A <- A + [A]	| A = 16 + 20 = 36 |
+|  0002   |	 0001 1011  |  1B  |  ADD Bh | A <- A + [B]	| A = 36 + 24 = 60 |
+|  0003   |	 0011 1100  |  2C  |  SUB Ch | A <- A - [C]	| A = 60 - 32 = 28 |
+|  0004   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 28	       |
+|  0005   |	 1111 0000  |  F0  |  HLT	 |	    -		|       -	       |
+|  0006   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0007   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0008   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  0009   |	 0001 0000  |  10  |  X  	 |	    -		|       -	       |
+|  000A   |	 0001 0100  |  14  |  Y 	 |	    -		|       -	       |
+|  000B   |	 0001 1000  |  18  |  Z 	 |	    -		|       -	       |
+|  000C   |	 0010 0000  |  20  |  W 	 |	    -		|       -	       |
+|  000D   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  000E   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+|  000F   |	 1111 1111  |  FF  |  HLT	 |	    -		|       -	       |
+
+The ROM image used in the simulation in the Logisim program is:
+[ ROM3 ](/ROMS/ROM3) 

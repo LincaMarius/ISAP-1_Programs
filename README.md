@@ -47,7 +47,7 @@ In total, 5 out of 16 possible instructions are implemented.
 ### Program 1
 I designed this program to test the correctness of the implementation of all instructions in the Instruction Set of the SAP-1 computer and implicitly of the ISAP-1 computer.
 
-The source code is in assembly language that uses instructions from the ISAP-1 computer syntax:
+The source code is in assembly language that uses instructions from the ISAP-1 computer syntax: \
 LDA 4 \
 ADD 1 \
 SUB 0 \
@@ -85,5 +85,8 @@ The execution of this program is:
 |  000D   |	 1101 0000  |  D0  |  NOP	 |	    -		|       -	       |
 |  000E   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 51	       |
 |  000F   |	 1111 0000  |  F0  |  HLT	 | HLT		    | HLT	           |
+
+The ROM image used in the simulation in the Logisim program is:
+[ ROM1 ](/ROMS/ROM1) 
 
 

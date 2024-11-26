@@ -48,21 +48,21 @@ In total, 5 out of 16 possible instructions are implemented.
 I designed this program to test the correctness of the implementation of all instructions in the Instruction Set of the SAP-1 computer and implicitly of the ISAP-1 computer.
 
 The source code is in assembly language that uses instructions from the ISAP-1 computer syntax:
-LDA 4
-ADD 1
-SUB 0
-30
-44
-50
-60
-70
-80
-90
-A0
-B0
-C0
-D0
-OUT
+LDA 4 \
+ADD 1 \
+SUB 0 \
+30h \
+44h \
+50h \
+60h \
+70h \
+80h \
+90h \
+A0h \
+B0h \
+C0h \
+D0h \
+OUT \
 HLT
 
 The execution of this program is:

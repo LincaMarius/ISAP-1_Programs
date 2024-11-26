@@ -134,3 +134,5 @@ The execution of this program is:
 |  000E   |	 1110 0000  |  FF  |  HLT	 |	    -		|       -	       |
 |  000F   |	 1111 0000  |  FF  |  HLT	 |	    -		|       -	       |
 
+The ROM image used in the simulation in the Logisim program is:
+[ ROM2 ](/ROMS/ROM2) 

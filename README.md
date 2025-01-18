@@ -48,7 +48,7 @@ In total, 5 out of 16 possible instructions are implemented.
 I designed this program to test the correctness of the implementation of all instructions in the Instruction Set of the SAP-1 computer and implicitly of the ISAP-1 computer.
 
 The source code is in assembly language that uses instructions from the ISAP-1 computer syntax: \
-LDA 4 \
+*LDA 4 \
 ADD 1 \
 SUB 0 \
 30h \
@@ -63,10 +63,9 @@ B0h \
 C0h \
 D0h \
 OUT \
-HLT
+HLT*
 
 The assembly language source code is:
-
 *LDA [0x04]	; load 0x44 into Accumulator \
 ADD [0x01]	; add 0x11 to Accumulator \
 SUB [0x00]	; subtract 0x04 from Accumulator \
@@ -107,10 +106,10 @@ This program is presented in the book and is the first program presented by the 
 In the book this program is found in Example 10-1 on page 144.
 
 The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
-LDA 9h \
-ADD Ah \
-ADD Bh \
-SUB Ch \
+*LDA 9h \
+ADD 0Ah \
+ADD 0Bh \
+SUB 0Ch \
 OUT \
 HLT \
 FFh \
@@ -122,7 +121,15 @@ FFh \
 04h \
 FFh \
 FFh \
-FFh
+FFh*
+
+The assembly language source code is: \
+*LDA [0x09]	; load X = 0x01 into Accumulator \
+ADD [0x0A]	; add Y = 0x02 to Accumulator \
+ADD [0x0B]	; add Z = 0x03 to Accumulator \
+SUB [0x0C]	; subtract W = 0x04 from Accumulator \
+OUT	; output to Display content of Accumulator \
+HLT	; end of program, halt computer*
 
 The execution of this program is:
 
@@ -148,14 +155,14 @@ The ROM image used in the simulation in the Logisim program is:
 [ ROM2 ](/ROMS/ROM2) 
 
 ### Program 3
-This program is presented in parts and is the second program presented by the authors explaining the operation of the SAP-1 computer.
+This program is presented in the book and is the second program that is presented by the authors explaining the operation of the SAP-1 computer.
 
 In the Book this program is found in Example 10-3 on page 145.
 
 This program solves the arithmetic problem: 16 + 20 + 24 - 32. This equation can be written: X + Y + Z – W.
 
 The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
-LDA 9h \
+*LDA 9h \
 ADD Ah \
 ADD Bh \
 SUB Ch \
@@ -170,7 +177,15 @@ FFh \
 20h \
 FFh \
 FFh \
-FFh
+FFh*
+
+The assembly language source code is: \
+*LDA [0x09]	; load X = 0x10 into Accumulator \
+ADD [0x0A]	; add Y = 0x14 to Accumulator \
+ADD [0x0B]	; add Z = 0x18 to Accumulator \
+SUB [0x0C]	; subtract W = 0x20 from Accumulator \
+OUT	; output to Display content of Accumulator \
+HLT	; end of program, halt computer*
 
 The execution of this program is:
 

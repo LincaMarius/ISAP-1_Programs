@@ -67,14 +67,14 @@ HLT
 
 The assembly language source code is:
 
-*LDA [0x04]	; load 0x44 into Accumulator
-ADD [0x01]	; add 0x11 to Accumulator
-SUB [0x00]	; subtract 0x04 from Accumulator
-NOP
-.
-.
-NOP
-OUT	; output to Display content of Accumulator
+*LDA [0x04]	; load 0x44 into Accumulator \
+ADD [0x01]	; add 0x11 to Accumulator \
+SUB [0x00]	; subtract 0x04 from Accumulator \
+NOP \
+. \
+. \
+NOP \
+OUT	; output to Display content of Accumulator \
 HLT	; end of program, halt computer*
 
 The execution of this program is:

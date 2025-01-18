@@ -7,7 +7,7 @@ Programs taken from other authors will be mentioned in the source code and I wil
 
 By: Lincă Marius Gheorghe.
 
-Pitești, Argeș, România, Europe.
+Pitești, Argeș, Romania, Europe.
 
 https://github.com/LincaMarius
 
@@ -65,11 +65,23 @@ D0h \
 OUT \
 HLT
 
+The assembly language source code is:
+
+*LDA [0x04]	; load 0x44 into Accumulator
+ADD [0x01]	; add 0x11 to Accumulator
+SUB [0x00]	; subtract 0x04 from Accumulator
+NOP
+.
+.
+NOP
+OUT	; output to Display content of Accumulator
+HLT	; end of program, halt computer*
+
 The execution of this program is:
 
 | Address | Instruction | Hexa |Assembly |    Action    |      Rezult      |
 |---------|-------------|------|---------|--------------|------------------|
-|  0000	  |  0000 0010  |  04  |  LDA 4  | A <- [4]	    | A = 44           |
+|  0000	  |  0000 0100  |  04  |  LDA 4  | A <- [4]	    | A = 44           |
 |  0001   |	 0001 0001  |  11  |  ADD 1  | A <- A + [1]	| A = 44 + 11 = 55 |
 |  0002   |	 0010 0000  |  20  |  SUB 0  | A <- A – [0]	| A = 55 – 4 = 51  |
 |  0003   |	 0011 0000  |  30  |  NOP	 |	    -		|       -	       |
@@ -90,11 +102,11 @@ The ROM image used in the simulation in the Logisim program is:
 [ ROM1 ](/ROMS/ROM1) 
 
 ### Program 2
-This program is presented in parts and is the first program presented by the authors that explains the operation of the SAP-1 computer.
+This program is presented in the book and is the first program presented by the authors to explain the operation of the SAP-1 computer.
 
 In the book this program is found in Example 10-1 on page 144.
 
-The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is:
+The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
 LDA 9h \
 ADD Ah \
 ADD Bh \

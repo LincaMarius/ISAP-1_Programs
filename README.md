@@ -101,7 +101,7 @@ The ROM image used in the simulation in the Logisim program is:
 [ ROM1 ](/ROMS/ROM1) 
 
 ### Program 2
-This program is presented in the book and is the first program presented by the authors to explain the operation of the SAP-1 computer.
+This program is presented in the Book and is the first program presented by the authors to explain the operation of the SAP-1 computer.
 
 In the book this program is found in Example 10-1 on page 144.
 
@@ -155,7 +155,7 @@ The ROM image used in the simulation in the Logisim program is:
 [ ROM2 ](/ROMS/ROM2) 
 
 ### Program 3
-This program is presented in the book and is the second program that is presented by the authors explaining the operation of the SAP-1 computer.
+This program is presented in the Book and is the second program that is presented by the authors explaining the operation of the SAP-1 computer.
 
 In the Book this program is found in Example 10-3 on page 145.
 

@@ -73,7 +73,7 @@ NOP \
 OUT	; output to Display content of Accumulator \
 HLT	; end of program, halt computer*
 
-The execution of this program is:
+Running this program is:
 
 | Address | Instruction | Hexa |Assembly |    Action    |      Rezult       |
 |---------|-------------|------|---------|--------------|-------------------|
@@ -102,6 +102,8 @@ This program is presented in the Book and is the first program presented by the 
 
 In the book this program is found in Example 10-1 on page 144.
 
+This program solves the arithmetic problem: 1 + 2 + 3 – 4. This equation can be written: X + Y + Z – W. The result should be OUT = 2.
+
 The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
 *LDA 9h \
 ADD 0Ah \
@@ -126,7 +128,12 @@ ADD [0x0A]	; add Y = 0x02 to Accumulator \
 ADD [0x0B]	; add Z = 0x03 to Accumulator \
 SUB [0x0C]	; subtract W = 0x04 from Accumulator \
 OUT	; output to Display content of Accumulator \
-HLT	; end of program, halt computer*
+HLT	; end of program, halt computer \
+X: DB 1 \
+Y: DB 2
+Z: DB 3 \
+W: DB 4*
+
 
 The execution of this program is:
 
@@ -156,7 +163,7 @@ This program is presented in the Book and is the second program that is presente
 
 In the Book this program is found in Example 10-3 on page 145.
 
-This program solves the arithmetic problem: 16 + 20 + 24 - 32. This equation can be written: X + Y + Z – W.
+This program solves the arithmetic problem: 16 + 20 + 24 – 32. This equation can be written: X + Y + Z – W. The result should be OUT = 28 (1Ch).
 
 The source code is in assembly language that uses instructions from the SAP-1 computer syntax and implicitly the ISAP-1 computer is: \
 *LDA 9h \
@@ -182,9 +189,13 @@ ADD [0x0A]	; add Y = 0x14 to Accumulator \
 ADD [0x0B]	; add Z = 0x18 to Accumulator \
 SUB [0x0C]	; subtract W = 0x20 from Accumulator \
 OUT	; output to Display content of Accumulator \
-HLT	; end of program, halt computer*
+HLT	; end of program, halt computer \
+X: DB 16 ;10h \
+Y: DB 20 ;14h \
+Z: DB 24 ;18h \
+W: DB 4*
 
-The execution of this program is:
+Running this program is:
 
 | Address | Instruction | Hexa |Assembly |    Action    |      Rezult      |
 |---------|-------------|------|---------|--------------|------------------|

@@ -5,9 +5,7 @@ These programs are designed by me or are taken from the authors of the SAP-1 com
 
 Programs taken from other authors will be mentioned in the source code and I will also include a shortcut to the location of the original code.
 
-By: Lincă Marius Gheorghe.
-
-Pitești, Argeș, Romania, Europe.
+By: Lincă Marius Gheorghe
 
 https://github.com/LincaMarius
 

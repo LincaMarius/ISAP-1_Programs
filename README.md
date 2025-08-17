@@ -17,7 +17,7 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 computer
 
-## Programs for ISAP-1 version 1
+## Programs for ISAP-1 version 0.1
 The format of the SAP-1 computer instructions is:
 
 | 4 bits instruction code   | 4 bits operand (memory address)          |
@@ -31,16 +31,18 @@ The original instruction set of the SAP-1 computer is:
 
 | Mnemonic | Opcode | Operation                                  |
 |----------|--------|--------------------------------------------|
-| LDA      | 0000   | Load RAM data into Accumulator             |
-| ADD      | 0001   | Add RAM data to Accumulator                |
-| SUB      | 0010   | Substract RAM data from accumulator        |
-| OUT      | 1110   | Load Accumulator data into Output Register |
-| HLT      | 1111   | Stop processing                            |
+| LDA n    | 0000   | Load RAM data into Accumulator             |
+| ADD n    | 0001   | Add RAM data to Accumulator                |
+| SUB n    | 0010   | Substract RAM data from accumulator        |
+| OUT *    | 1110   | Load Accumulator data into Output Register |
+| HLT *    | 1111   | Stop processing                            |
 
 In total, 5 out of 16 possible instructions are implemented.
 
 ### Program 1
 I designed this program to test the correctness of the implementation of all instructions in the Instruction Set of the SAP-1 computer and implicitly of the ISAP-1 computer.
+
+This program solves the arithmetic problem: 68 + 17 – 4. This equation can be written: X + Y – Z. The result should be OUT = 81.
 
 The source code is in assembly language that uses instructions from the ISAP-1 computer syntax: \
 *LDA 4 \
@@ -61,9 +63,11 @@ OUT \
 HLT*
 
 The assembly language source code is: \
-*LDA [0x04]	; load 0x44 into Accumulator \
-ADD [0x01]	; add 0x11 to Accumulator \
-SUB [0x00]	; subtract 0x04 from Accumulator \
+*Z: LDA [0x04]	; load X = 0x44 into Accumulator \
+Y: ADD [0x01]	; add Y = 0x11 to Accumulator \
+SUB [0x00]	; subtract Z = 0x04 from Accumulator \
+NOP \
+X: DB 68 ;44h \
 NOP \
 . \
 . \
@@ -128,10 +132,10 @@ SUB [0x0C]	; subtract W = 0x04 from Accumulator \
 OUT	; output to Display content of Accumulator \
 HLT	; end of program, halt computer \
 X: DB 1 \
-Y: DB 2
+Y: DB 2 \
 Z: DB 3 \
-W: DB 4*
-
+W: DB 4 \
+HLT	; end of program, halt computer*
 
 The execution of this program is:
 
@@ -191,7 +195,8 @@ HLT	; end of program, halt computer \
 X: DB 16 ;10h \
 Y: DB 20 ;14h \
 Z: DB 24 ;18h \
-W: DB 4*
+W: DB 4 \
+HLT	; end of program, halt computer*
 
 Running this program is:
 
